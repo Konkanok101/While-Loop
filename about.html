@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับ - คำสั่ง while loop ในภาษา C</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #0a0a0a; color: #fff; }
+        header {
+            background: linear-gradient(135deg, #ff8c00, #ff2e63);
+            padding: 40px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .logo-container {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .logo-container img {
+            width: 50px; /* ปรับขนาดโลโก้ */
+            height: auto;
+        }
+
+        header {
+            position: relative;
+            padding-left: 120px; /* เว้นที่ให้โลโก้ */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1c1c1c;
+            padding: 15px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 20px;
+            font-size: 18px;
+            transition: 0.3s;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: rgba(255, 140, 0, 0.6);
+            color: #000;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+        .section {
+            background: #1e1e1e;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(255, 92, 92, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 92, 92, 0.5);
+        }
+        .section h2 {
+            color: #ff8c00;
+            margin-bottom: 15px;
+        }
+        .section p {
+            line-height: 1.8;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1c1c1c;
+            margin-top: 30px;
+        }
+       
+        @media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .member-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .member-card {
+        width: 90%; /* ให้การ์ดเล็กลงบนหน้าจอมือถือ */
+        max-width: 400px;
+    }
+
+    .member-card img {
+        width: 100px; /* ลดขนาดรูป */
+        height: 100px;
+    }
+    .member-card {
+    background: #1e1e1e;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 92, 92, 0.3);
+    text-align: center;
+    width: 300px; /* ขนาดปกติ */
+    max-width: 100%; /* ป้องกันการเกินขอบจอ */
+}
+
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Nrru.png" alt="โลโก้ 1">
+            <img src="CED.png" alt="โลโก้ 2">
+        </div>
+        เกี่ยวกับ - คำสั่ง while loop ในภาษา C
+    </header>
+    <!-- <header>เกี่ยวกับ - คำสั่ง while loop ในภาษา C</header> -->
+    <nav>
+        <a href="index.html">หน้าแรก</a>
+        <a href="about.html">เกี่ยวกับ</a>
+        <a href="courses.html">หลักสูตร</a>
+        <a href="projects.html">ตัวอย่างโปรเจค</a>
+        <a href="contact.html">ติดต่อ</a>
+    </nav>
+    <div class="container">
+        <div class="section">
+            <h2>คำสั่ง while loop คืออะไร?</h2>
+            <p>คำสั่ง while loop ในภาษา C เป็นโครงสร้างควบคุมที่ช่วยให้โปรแกรมสามารถทำงานซ้ำ ๆ ได้จนกว่าจะเป็นไปตามเงื่อนไขที่กำหนด โดยจะตรวจสอบเงื่อนไขก่อนเสมอ หากเป็นจริงจะทำคำสั่งที่อยู่ภายในลูป</p>
+        </div>
+        <div class="section">
+            <h2>โครงสร้างของ while loop</h2>
+            <pre><code>while (เงื่อนไข) {
+    คำสั่งที่ต้องการให้ทำซ้ำ;
+}</code></pre>
+        </div>
+        <div class="section">
+            <h2>ตัวอย่างการใช้ while loop</h2>
+            <pre><code>#include <stdio.h>
+
+int main() {
+    int i = 0;
+    while (i < 5) {
+        printf("%d\n", i);
+        i++;
+    }
+    return 0;
+}</code></pre>
+        </div>
+        <div class="section">
+            <h2>ข้อดีของ while loop</h2>
+            <ul>
+                <li>เหมาะสำหรับกรณีที่จำนวนรอบของการทำซ้ำไม่แน่นอน</li>
+                <li>สามารถใช้ควบคุมเงื่อนไขได้อย่างยืดหยุ่น</li>
+                <li>ช่วยให้โค้ดกระชับและอ่านง่าย</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>ข้อควรระวัง</h2>
+            <ul>
+                <li>หากไม่มีการเปลี่ยนแปลงค่าของตัวแปรที่ใช้เป็นเงื่อนไข อาจเกิด Infinite Loop</li>
+                <li>ต้องแน่ใจว่าเงื่อนไขจะเป็น False ที่จุดหนึ่ง มิฉะนั้นโปรแกรมอาจค้าง</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>เปรียบเทียบ while loop กับ for loop</h2>
+            <p><strong>while loop</strong> ใช้ในกรณีที่จำนวนรอบไม่แน่นอน ขึ้นอยู่กับเงื่อนไขที่กำหนด
+            <br><strong>for loop</strong> ใช้เมื่อทราบจำนวนรอบที่แน่นอนล่วงหน้า</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".section");
+    
+            function showSections() {
+                sections.forEach((section, index) => {
+                    setTimeout(() => {
+                        section.classList.add("show");
+                    }, index * 200); // หน่วงเวลาทีละ 200ms ให้ค่อยๆ ขึ้น
+                });
+            }
+    
+            showSections();
+        });
+    </script>
+    <footer>&copy; 2025 โครงการภาษา C | นักศึกษาสาขาคอมพิวเตอร์ คณครุศาสตร์ มหาวิทยาลัยราชภัฏนครราชสีมา</footer>
+</body>
+</html>

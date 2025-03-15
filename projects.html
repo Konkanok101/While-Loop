@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตัวอย่างโปรเจค - คำสั่ง while loop ในภาษา C</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #0a0a0a; color: #fff; }
+        header {
+            background: linear-gradient(135deg, #ff8c00, #ff2e63);
+            padding: 40px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            position: relative;
+            padding-left: 120px;
+        }
+        .logo-container {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .logo-container img {
+            width: 50px;
+            height: auto;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1c1c1c;
+            padding: 15px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 20px;
+            font-size: 18px;
+            transition: 0.3s;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: rgba(255, 140, 0, 0.6);
+            color: #000;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+        .section {
+            background: #1e1e1e;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(255, 92, 92, 0.3);
+        }
+        .section h2 {
+            color: #ff8c00;
+            margin-bottom: 15px;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .code-box {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background: #ff8c00;
+            color: #000;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #ff2e63;
+            color: #fff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1c1c1c;
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .member-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .member-card {
+        width: 90%; /* ให้การ์ดเล็กลงบนหน้าจอมือถือ */
+        max-width: 400px;
+    }
+
+    .member-card img {
+        width: 100px; /* ลดขนาดรูป */
+        height: 100px;
+    }
+    .member-card {
+    background: #1e1e1e;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 92, 92, 0.3);
+    text-align: center;
+    width: 300px; /* ขนาดปกติ */
+    max-width: 100%; /* ป้องกันการเกินขอบจอ */
+}
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Nrru.png" alt="โลโก้ 1">
+            <img src="CED.png" alt="โลโก้ 2">
+        </div>
+        ตัวอย่างโปรเจค - คำสั่ง while loop ในภาษา C
+    </header>
+    <nav>
+        <a href="index.html">หน้าแรก</a>
+        <a href="about.html">เกี่ยวกับ</a>
+        <a href="courses.html">หลักสูตร</a>
+        <a href="projects.html">ตัวอย่างโปรเจค</a>
+        <a href="contact.html">ติดต่อ</a>
+    </nav>
+    <div class="container">
+        <div class="section">
+            <h2>1. ตรวจเลขคู่-คี่</h2>
+            <p>โค้ดนี้ใช้ while loop ในการตรวจสอบเลขคู่หรือเลขคี่ที่ผู้ใช้ป้อนเข้ามา</p>
+            <pre class="code-box"><code>
+int num;
+printf("ป้อนตัวเลข (0 เพื่อออก): ");
+scanf("%d", &num);
+while (num != 0) {
+    if (num % 2 == 0) {
+        printf("%d เป็นเลขคู่\n", num);
+    } else {
+        printf("%d เป็นเลขคี่\n", num);
+    }
+    printf("ป้อนตัวเลขอีกครั้ง: ");
+    scanf("%d", &num);
+}
+            </code></pre>
+            <a href="even_odd.c" class="btn">ดาวน์โหลดโค้ด</a>
+        </div>
+        <div class="section">
+            <h2>2. นับจำนวนตัวอักษร</h2>
+            <p>โค้ดนี้ใช้ while loop เพื่ออ่านข้อความและนับจำนวนตัวอักษรที่ป้อนเข้ามา</p>
+            <pre class="code-box"><code>
+char str[100];
+int count = 0, i = 0;
+printf("ป้อนข้อความ: ");
+gets(str);
+while (str[i] != '\0') {
+    count++;
+    i++;
+}
+printf("ข้อความมี %d ตัวอักษร\n", count);
+            </code></pre>
+            <a href="count_characters.c" class="btn">ดาวน์โหลดโค้ด</a>
+        </div>
+        <div class="section">
+            <h2>3. เกมทายตัวเลข</h2>
+            <p>เกมให้ผู้ใช้ทายตัวเลขที่ถูกสุ่มขึ้นมา</p>
+            <pre class="code-box"><code>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main() {
+    int number, guess;
+    srand(time(0));
+    number = rand() % 100 + 1;
+    printf("ทายตัวเลข (1-100): ");
+    scanf("%d", &guess);
+    while (guess != number) {
+        if (guess > number) printf("มากไป! ลองใหม่: ");
+        else printf("น้อยไป! ลองใหม่: ");
+        scanf("%d", &guess);
+    }
+    printf("ถูกต้อง! ตัวเลขคือ %d\n", number);
+    return 0;
+}
+            </code></pre>
+            <a href="guess_number.c" class="btn">ดาวน์โหลดโค้ด</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".section");
+    
+            function showSections() {
+                sections.forEach((section, index) => {
+                    setTimeout(() => {
+                        section.classList.add("show");
+                    }, index * 200); // หน่วงเวลาทีละ 200ms ให้ค่อยๆ ขึ้น
+                });
+            }
+    
+            showSections();
+        });
+    </script>
+    <footer>&copy; 2025 โครงการภาษา C | นักศึกษาสาขาคอมพิวเตอร์ คณครุศาสตร์ มหาวิทยาลัยราชภัฏนครราชสีมา</footer>
+</body>
+</html>
