@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อ - โครงการภาษา C</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #0a0a0a; color: #fff; }
+        header {
+            background: linear-gradient(135deg, #ff8c00, #ff2e63);
+            padding: 40px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            position: relative;
+        }
+        .logo-container {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .logo-container img {
+            width: 50px;
+            height: auto;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1c1c1c;
+            padding: 15px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 20px;
+            font-size: 18px;
+            transition: 0.3s;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: rgba(255, 140, 0, 0.6);
+            color: #000;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .member-card {
+            background: #1e1e1e;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(255, 92, 92, 0.3);
+            display: inline-block;
+            text-align: center;
+            width: 300px;
+        }
+        .member-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff8c00;
+            margin-bottom: 10px;
+        }
+        .member-card h3 { color: #ff8c00; }
+        .member-card p { font-size: 14px; margin: 5px 0; }
+        .social-links a {
+            color: #ff8c00;
+            text-decoration: none;
+            margin: 5px;
+            display: inline-block;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1c1c1c;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Nrru.png" alt="โลโก้ 1">
+            <img src="CED.png" alt="โลโก้ 2">
+        </div>
+        ติดต่อ 
+    </header>
+    <nav>
+        <a href="index.html">หน้าแรก</a>
+        <a href="about.html">เกี่ยวกับ</a>
+        <a href="courses.html">หลักสูตร</a>
+        <a href="projects.html">ตัวอย่างโปรเจค</a>
+        <a href="contact.html">ติดต่อ</a>
+    </nav>
+    <div class="container">
+        <h2>สมาชิกในทีม</h2>
+        <div class="member-list">
+            <div class="member-card section">
+                <img src="101.jpg" alt="สมาชิก 1">
+                <h3>นางสาวกรกนก ตวยกระโทก</h3>
+                <p>📞 0967870240</p>
+                <p>📧 6540108101@nrru.ac.th</p>
+                <div class="social-links">
+                <p>ไลน์: 0629039640</p>
+                <p>เฟซบุ๊ก: Konkanok Tuaikrathok</p>
+                </div>
+            </div>
+            <div class="member-card section">
+                <img src="106.jpeg" alt="สมาชิก 2">
+                <h3>นางสาวดันหยง เกียรติโคกรวด</h3>
+                <p>📞 0924592176</p>
+                <p>📧 6540108106@nrru.ac.th</p>
+                <div class="social-links">
+                <p>ไลน์: 0650914540</p>
+                <p>เฟซบุ๊ก: ดันหยง เกียรติโคกรวด</p>
+                </div>
+            </div>
+            <div class="member-card section">
+                <img src="113.jpeg" alt="สมาชิก 3">
+                <h3>นางสาวศศิกา เหมือนขุนทด</h3>
+                <p>📞 0992410718</p>
+                <p>📧 6540108113@nrru.ac.th</p>
+                <div class="social-links">
+                <p>ไลน์: 0621075809</p>
+                <p>เฟซบุ๊ก: ศศิกา เหมือนขุนทด</p>
+                </div>
+            </div>
+            <div class="member-card section">
+                <img src="201.jpeg" alt="สมาชิก 4">
+                <h3>นางสาวจิตติมา ชะวางกลาง</h3>
+                <p>📞 0645620463</p>
+                <p>📧 6540108201@nrru.ac.th</p>
+                <div class="social-links">
+                <p>ไลน์: Weed_23</p>
+                <p>เฟซบุ๊ก: Jittima JP</p>
+                </div>
+            </div>
+            <div class="member-card section">
+                <img src="203.jpeg" alt="สมาชิก 5">
+                <h3>นางสาวซารีฟะห์ อาบูเดร์</h3>
+                <p>📞 0629925821</p>
+                <p>📧 6540108203@nrru.ac.th</p>
+                <div class="social-links">
+                <p>ไลน์: putti_2546</p>
+                <p>เฟซบุ๊ก: ฟะฮ์</p>
+                </div>
+            </div>
+            <div class="member-card section">
+                <img src="209.jpeg" alt="สมาชิก 6">
+                <h3>นางสาวนันนิสา เมืองแสน</h3>
+                <p>📞 0628473300</p>
+                <p>📧 6540108209@nrru.ac.th</p>
+                <div class="social-links">
+                <p>ไลน์: waew120646</p>
+                <p>เฟซบุ๊ก: Nns Wnanni</p>
+                </div>
+            </div>
+            <div class="member-card section">
+                <img src="210.jpg" alt="สมาชิก 7">
+                <h3>นางสาวบ่อบุญ พรหมชัย</h3>
+                <p>📞 0834528164</p>
+                <p>📧 6540108210@nrru.ac.th</p>
+                <div class="social-links">
+                <p>ไลน์: 0830629465</p>
+                <p>เฟซบุ๊ก: Bobun Promchai</p>
+                </div>
+            </div>
+            <div class="member-card section">
+                <img src="213.jpeg" alt="สมาชิก 8">
+                <h3>นางสาวศุจินธรา อัศวภูมิ</h3>
+                <p>📞 0910601241</p>
+                <p>📧 6540108213@nrru.ac.th</p>
+                <div class="social-links">
+                <p>ไลน์: Yhad_yd</p>
+                <p>เฟซบุ๊ก: Suchinthara Ussawapoom</p>
+                </div>
+            </div>
+            <div class="member-card section">
+                <img src="214.jpeg" alt="สมาชิก 9">
+                <h3>นางสาวสุธิชา ทองสา</h3>
+                <p>📞 06180145375</p>
+                <p>📧 6540108214@nrru.ac.th</p>
+                <div class="social-links">
+                <p>ไลน์: suticha</p>
+                <p>เฟซบุ๊ก: Suticha Thongsa</p>
+                </div>
+            </div>
+            <div class="member-card section">
+                <img src="215.jpeg" alt="สมาชิก 10">
+                <h3>นางสาวอนัญญา แซวประโคน</h3>
+                <p>📞 0631164246</p>
+                <p>📧 6540108215@nrru.ac.th</p>
+                <div class="social-links">
+                <p>ไลน์: 0820216582</p>
+                <p>เฟซบุ๊ก: Ananya Saewprakorn</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const sections = document.querySelectorAll(".member-card"); // เลือก .member-card แทน
+
+    function showSections() {
+        sections.forEach((section, index) => {
+            setTimeout(() => {
+                section.classList.add("show");
+            }, index * 200); // หน่วงเวลาทีละ 200ms ให้ค่อยๆ แสดง
+        });
+    }
+
+    showSections();
+});
+
+    </script>
+    <footer>&copy; 2025 โครงการภาษา C | นักศึกษาสาขาคอมพิวเตอร์ คณครุศาสตร์ มหาวิทยาลัยราชภัฏนครราชสีมา</footer>
+</body>
+</html>

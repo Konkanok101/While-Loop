@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หลักสูตร - คำสั่ง while loop ในภาษา C</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #0a0a0a; color: #fff; }
+        header {
+            background: linear-gradient(135deg, #ff8c00, #ff2e63);
+            padding: 40px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .logo-container {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .logo-container img {
+            width: 50px; /* ปรับขนาดโลโก้ */
+            height: auto;
+        }
+
+        header {
+            position: relative;
+            padding-left: 120px; /* เว้นที่ให้โลโก้ */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1c1c1c;
+            padding: 15px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 20px;
+            font-size: 18px;
+            transition: 0.3s;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: rgba(255, 140, 0, 0.6);
+            color: #000;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+        .section {
+            background: #1e1e1e;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(255, 92, 92, 0.3);
+        }
+        .section h2 {
+            color: #ff8c00;
+            margin-bottom: 15px;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .code-box {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1c1c1c;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Nrru.png" alt="โลโก้ 1">
+            <img src="CED.png" alt="โลโก้ 2">
+        </div>
+        หลักสูตร - คำสั่ง while loop ในภาษา C
+    </header>
+    <!-- <header>หลักสูตร - คำสั่ง while loop ในภาษา C</header> -->
+    <nav>
+        <a href="index.html">หน้าแรก</a>
+        <a href="about.html">เกี่ยวกับ</a>
+        <a href="courses.html">หลักสูตร</a>
+        <a href="projects.html">ตัวอย่างโปรเจค</a>
+        <a href="contact.html">ติดต่อ</a>
+    </nav>
+    <div class="container">
+        <div class="section">
+            <h2>1. แนะนำคำสั่ง while loop</h2>
+            <p>คำสั่ง while เป็นคำสั่งควบคุมโครงสร้างแบบวนซ้ำ ที่จะทำซ้ำคำสั่งภายในบล็อกจนกว่าเงื่อนไขจะเป็นเท็จ</p>
+        </div>
+        <div class="section">
+            <h2>2. โครงสร้างของ while loop</h2>
+            <div class="code-box">
+                <code>
+while (เงื่อนไข) {
+    // คำสั่งที่ต้องการให้ทำซ้ำ
+}
+                </code>
+            </div>
+        </div>
+        <div class="section">
+            <h2>3.ตัวอย่างการใช้ while loop</h2>
+        
+            <h3>1. ตัวอย่างพื้นฐาน (การพิมพ์ค่าออกทางหน้าจอ)</h3>
+            <p>โค้ดนี้จะแสดงค่าตัวเลขจาก 0 ถึง 4:</p>
+            <pre><code>
+            int i = 0;
+            while (i < 5) {
+                printf("%d\n", i);
+                i++;
+            }
+            </code></pre>
+            <img src="1..png" alt="ตัวอย่างการใช้ while loop">
+        
+            <h3>2. การใช้ while loop ในการรับค่าจากผู้ใช้</h3>
+            <p>โค้ดนี้รับค่าจากผู้ใช้จนกว่าจะป้อนเลข 0:</p>
+            <pre><code>
+            int num;
+            printf("ป้อนตัวเลข (0 เพื่อออก): ");
+            scanf("%d", &num);
+            
+            while (num != 0) {
+                printf("คุณป้อน: %d\n", num);
+                printf("ป้อนตัวเลขอีกครั้ง: ");
+                scanf("%d", &num);
+            }
+            </code></pre>
+            <img src="2..png" alt="ตัวอย่าง while loop รับค่าผู้ใช้">
+        
+            <h3>3. การประยุกต์ใช้ while loop ในการประมวลผลข้อมูล</h3>
+            <p>โค้ดนี้คำนวณผลรวมของตัวเลขที่ป้อนเข้ามา:</p>
+            <pre><code>
+            int sum = 0, num;
+            printf("ป้อนตัวเลข (0 เพื่อออก): ");
+            scanf("%d", &num);
+            
+            while (num != 0) {
+                sum += num;
+                printf("ป้อนตัวเลขอีกครั้ง: ");
+                scanf("%d", &num);
+            }
+            
+            printf("ผลรวมของตัวเลขที่ป้อน: %d\n", sum);
+            </code></pre>
+            <img src="3..png" alt="ตัวอย่าง while loop คำนวณผลรวม">
+        </div>
+        <div class="section">
+            <h2>4. ข้อผิดพลาดที่พบบ่อย</h2>
+            <p>เช่น การลืมเพิ่มค่าตัวแปรทำให้เกิด infinite loop</p>
+        </div>
+        <div class="section">
+            <h2>5. แบบทดสอบ</h2>
+            <p>1.เขียนโปรแกรมคำนวณเลขคู่-เลขคี่<br>2.เขรยนโปรแกรมนับจำนวนตัวอักษร<br>3.เขียนโปรแกรมสร้างเมนูเลือกคำสั่ง</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".section");
+    
+            function showSections() {
+                sections.forEach((section, index) => {
+                    setTimeout(() => {
+                        section.classList.add("show");
+                    }, index * 200); // หน่วงเวลาทีละ 200ms ให้ค่อยๆ ขึ้น
+                });
+            }
+    
+            showSections();
+        });
+    </script>
+    
+    <footer>&copy; 2025 โครงการภาษา C | นักศึกษาสาขาคอมพิวเตอร์ คณครุศาสตร์ มหาวิทยาลัยราชภัฏนครราชสีมา</footer>
+</body>
+</html>
